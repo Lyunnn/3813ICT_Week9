@@ -52,11 +52,17 @@ export class UpdateProductComponent implements OnInit {
       price: parseFloat(this.productprice).toFixed(2),
       units: this.productunits,
     };
-    this.productdata.updateitem(prod).subscribe(data=>{
-      if(data == true) {
-        this.router.navigateByUrl("list");
+    this.productdata.checkvalidid(prod).subscribe((data)=>{
+      if(data.success == 1) {
+        this.productdata.updateitem(prod).subscribe((data)=>{
+          if(data.ok == prod.id) {
+            this.router.navigateByUrl("list");
+          } else {
+            console.log("error while updating item");
+          }
+        })
       } else {
-        console.log("error while updating item");
+        console.log("something went wrong when validating id");
       }
     })
   }

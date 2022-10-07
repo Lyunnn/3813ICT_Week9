@@ -74,10 +74,10 @@ export class AddProductComponent implements OnInit {
       this.iderrormsg = "This id already exists";
     } else {
       this.productdata.add(newprod).subscribe(data => {
-        if(data == true) {
-          this.router.navigateByUrl("list");
+        if(data.num == 0) {
+          console.log("duplicate item");
         } else {
-          console.log("error");
+          this.router.navigateByUrl("list");
         }
       })
     }
