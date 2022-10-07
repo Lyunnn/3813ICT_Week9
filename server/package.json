@@ -1,0 +1,28 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lyunnn/3813ICT_Week9.git"
+  },
+  "keywords": [
+    "3813ICTWeek9"
+  ],
+  "author": "Lyun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lyunnn/3813ICT_Week9/issues"
+  },
+  "homepage": "https://github.com/Lyunnn/3813ICT_Week9#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mongodb": "^4.10.0"
+  }
+}
