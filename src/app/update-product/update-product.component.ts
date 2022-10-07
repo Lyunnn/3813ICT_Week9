@@ -14,7 +14,7 @@ export class UpdateProductComponent implements OnInit {
   productid:number = 0;
   productname:string = "";
   productdesc:string = "";
-  productprice:number = 0;
+  productprice:string = "";
   productunits:number = 0;
 
   constructor(private route:ActivatedRoute, private router:Router, private productdata:ProductdataService) { }
@@ -49,14 +49,14 @@ export class UpdateProductComponent implements OnInit {
       id: this.productid,
       name: this.productname,
       description: this.productdesc,
-      price: this.productprice,
+      price: parseFloat(this.productprice).toFixed(2),
       units: this.productunits,
     };
     this.productdata.updateitem(prod).subscribe(data=>{
       if(data == true) {
         this.router.navigateByUrl("list");
       } else {
-        console.log("error");
+        console.log("error while updating item");
       }
     })
   }
